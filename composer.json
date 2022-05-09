@@ -1,0 +1,20 @@
+{
+    "name": "zinapse/larabackup",
+    "description": "A simple package to let you backup your Laravel application's data.",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^9.11"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zinapse\\Larabackup\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zinapse"
+        }
+    ],
+    "minimum-stability": "stable"
+}
