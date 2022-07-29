@@ -80,14 +80,14 @@ class LaravelBackupCommand extends Command
                 if(empty($row->Field)) continue;
 
                 // Add the name to the array
-                $table_data[$table][] = $row->Field;
+                $table_data[$table] = $row->Field;
 
                 // Verbose output
                 if($verbose) $this->info('Column: ' . $row->Field);
             }
         }
 
-        // Migrate
+        // Iterate over the table data
         foreach($table_data as $name => $columns) {
             // Get all the data from the table
             $all = DB::connection($source_connection)->table($name)->get();
@@ -100,7 +100,7 @@ class LaravelBackupCommand extends Command
                 // Add data to the array
                 foreach($record as $key => $value) $structure[$key] = $value;
 
-                // Migrate
+                // Backup data
                 DB::connection($target_connection)->table($name)->insertOrIgnore($structure);
             }
         }
