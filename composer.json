@@ -1,7 +1,8 @@
 {
     "name": "zinapse/larabackup",
-    "description": "A simple package to let you backup your Laravel application's data.",
     "type": "library",
+    "description": "A simple package to let you backup your Laravel application's data.",
+    "homepage": "https://github.com/zinapse/larabackup",
     "require": {
         "laravel/framework": "^9.11"
     },
@@ -16,5 +17,12 @@
             "name": "Zinapse"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zinapse\\LaraBackup\\LaraBackupServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable"
 }
